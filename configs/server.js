@@ -6,6 +6,7 @@ import helmet from 'helmet'
 import morgan from 'morgan'
 import { dbConnection } from './mongo.js'
 import authRoutes from '../src/auth/auth.routes.js'
+import categoryRoutes from '../src/category/category.routes.js'
 import { swaggerDocs, swaggerUi } from "./swagger.js/index.js";
 
 const middlewares = (app) => {
@@ -19,6 +20,7 @@ const middlewares = (app) => {
 
 const routes = (app)=>{
     app.use('/storeMarkUpApi/v1/auth', authRoutes)
+    app.use('/storeMarkUpApi/v1/category', categoryRoutes) 
     app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
 }
