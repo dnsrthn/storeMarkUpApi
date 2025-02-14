@@ -37,7 +37,7 @@ const userSchema = Schema({
     role: {
         type: String,
         required: true,
-        enum: ["ADMIN_ROLE", "CLIENT_ROLE"],
+        enum: ['ADMIN_ROLE', 'CLIENT_ROLE'],
         default: 'user'
     },
     status: {
@@ -61,4 +61,4 @@ userSchema.methods.toJSON = function(){
     return usuario
 }
 
-export default model("User", userSchema)
+export default model('User', userSchema)

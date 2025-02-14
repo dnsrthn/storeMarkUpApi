@@ -1,8 +1,8 @@
-import { hash, verify } from "argon2"
+import { hash, verify } from 'argon 2'
 import User from "./user.model.js"
-import fs from "fs/promises"
-import { join, dirname } from "path"
-import { fileURLToPath } from "url"
+import fs from 'fs/promises'
+import { join, dirname } from 'path'
+import { fileURLToPath } from 'url'
 
 const _dirName = dirname (fileURLToPath(import.meta.url))
 
@@ -14,7 +14,7 @@ export const showUserById = async (req, res) => {
         if(!user) {
             return res.status(404).json({
                 success: false,
-                message: "User wa snot found"
+                message: 'User was not ofund'
             })            
         }
 
@@ -26,7 +26,7 @@ export const showUserById = async (req, res) => {
     } catch (error) {
             return res.status(500).json({
             success: false,
-            message: "Error while getting user",
+            message:'Error while getting user',
             error: error.message
             })
     }
@@ -52,7 +52,7 @@ export const getUsers = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            message: "Error ocurred while getting users",
+            message: 'Error ocurred while getting users',
             error: error.message
         })
     }
@@ -67,13 +67,13 @@ export const deleteUser = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: "User has been deleted",
+            message: 'User has been deleted',
             user
         })
     } catch (error) {
         return res.status(500).json({
             success: false,
-            message: "Error ocurred while trying to delet user",
+            message: 'Error ocurred while trying to delet user',
             error: error.message
         })
     }
@@ -101,12 +101,12 @@ export const updatePassword = async (req, res) => {
 
         return res.status(200).json({
             success: true,
-            message: "Contraseña actualizada",
+            message: "Password Updated",
         })
     } catch (err) {
         return res.status(500).json({
             success: false,
-            message: "Error al actualizar contraseña",
+            message: "Error while updating the password",
             error: err.message
         })
     }
